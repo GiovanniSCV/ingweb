@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+            width: 1000px;
+            height: 1500px; 
+            position: fixed;
+            padding: 0px 0px 0px;
+            background: rgb(204, 200, 200);
+            }
+            canvas{
+                
+                padding: 0px 150px 0px;
+            }
+            header {
+            width: 1300px;
+            position: center;
+            background-color: #777 ;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            border: 2px solid black;
+            }
+            
+            img{
+            float: left;
+            transform: translate(0%, -26%);
+            width: 50px;
+            height: 50px; 
+            
+            }
+            .spe{
+            padding: 10px 10px;
+            float: right;
+            transform: translate(0%, -26%);
+            background-color: rgb(115, 198, 182); /* Color Rojo */
+            color:black;
+            border-radius: 10px;
+            text-decoration: none;
+            }
+            .spe:hover{
+            background-color: lightblue;
+            color:black;
+            text-decoration: none;
+            }
+        </style>
+        <title>INSUBAS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    </head>
+    <body>
+        <header>
+            REPORTE INSULINA (mg/dl)
+            <img src="../static/img/logo.png" class="avatar" alt="Avatar Image">
+            <a href="index" class="spe">Volver</a>
+        </header>
+
+        <canvas id="myChart"></canvas>
+    <script>
+        var ctx= document.getElementById("myChart").getContext("2d");
+        var dateGlucosa = [ '{{ dateGlucosa[0] }}' , '{{ dateGlucosa[1] }}' , '{{ dateGlucosa[2] }}' , '{{ dateGlucosa[3] }}' , '{{ dateGlucosa[4] }}' , '{{ dateGlucosa[5] }}' , '{{ dateGlucosa[6] }}' ]
+        var myChart= new Chart(ctx,{
+            type:"line",
+            data:{
+                labels: dateGlucosa,
+                datasets:[{
+                        label:'Valor de insulina',
+                        data: {{ glucosa }},
+                        pointRadius:5,
+                        borderColor:'rgb(1, 1, 1,1)',
+                        backgroundColor:'rgb(135, 10, 1,1)',
+                        pointBackgroundColor:[
+                            'rgb(66, 134, 244,1)',
+                            'rgb(74, 135, 72,1)',
+                            'rgb(254, 250, 3,1)',
+                            'rgb(100, 5, 77,1)',
+                            'rgb(251, 127, 3,1)',
+                            'rgb(4, 4, 4,1)',
+                            'rgb(9, 252, 243,1)',    
+                        ]
+                        
+                }]
+                
+            },
+            options:{
+                scales:{
+                    yAxes:[{
+                            ticks:{
+                                beginAtZero:true
+                            }
+                    }]
+                }
+            }
+        });
+    </script>
+    <br><br><a href="graficacircular" class="spe">VER GRÁFICA PROMEDIO</a><br>
+    </body>
+</html>
