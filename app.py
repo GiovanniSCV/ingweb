@@ -188,7 +188,7 @@ def datacircular(tuplaMySQL, indice, bajaNormal, normalAlta):
     zonasDataUser =[0,0,0]
     for valData in tuplaMySQL:
         if valData[indice] >= bajaNormal and valData[indice] <= normalAlta :
-            zonasDataUser[1] += 1#   Zona media (Nivel sano)
+            zonasDataUser[1] += 1#   Zona media (Nivel sanoooo)
         elif valData[indice] > normalAlta:
             zonasDataUser[2] += 1#   Zona Alta (Hiperglucemico)
         elif valData[indice] < bajaNormal:
