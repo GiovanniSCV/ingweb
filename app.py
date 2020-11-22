@@ -87,7 +87,8 @@ def index():
 @app.route('/peso')
 # @app.route('/index',methods = ['POST','GET'])
 def peso():
-    return render_template("peso.html")
+    read = readTables("pesousuarios")
+    return render_template("peso.html", read = read)
 @app.route('/sensor')
 # @app.route('/index',methods = ['POST','GET'])
 def sensor():

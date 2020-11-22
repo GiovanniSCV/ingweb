@@ -143,31 +143,23 @@
 </head>
 <body>
     <div class="login-box">
-        <img src="../static/img/logo.png" class="avatar" alt="Avatar Image">
-        
+        <img src="../static/img/logo.png" class="avatar" alt="Avatar Image">        
             <h1>Bienvenido</h1>
             <CENTER>
                 <table>
-                    <tr>
-                      
-                      <th >PESO</th>
-                      <th >UNIDADES(Kg)</th>
+                    <tr> 
+                        <th >ID USER</th>                 
+                        <th >PESO</th>
+                        <th >UNIDADES(Kg)</th>
                     </tr>
-                    
+                    {% for valread in read %}   
                     <tr>
-                      <td>1</td>
-                      <td>2</td>
+                        <td>{{ valread[0] }}</td>
+                        <td>{{ valread[1] }}</td>
+                        <td>{{ valread[2] }}</td>
                     </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>6</td>
-                    </tr>
-                  </table>
-                  
+                    {% endfor %}
+                  </table>                  
                   <br><br><br>
                   <a href="graficapeso" class="spe" >GRÁFICA PESO</a><br><br><br>
                   <a href="peso" class="spe" >ACTUALIZAR</a><br><br><br>
