@@ -82,8 +82,9 @@ def registro():
 # @app.route('/index',methods = ['POST','GET'])
 @app.route('/index')
 def index():
-    print("si entra a index")
-    return render_template("index.html")
+    countSensor = coutData("sensorFreeStyle")
+    countPeso = coutData("pesousuarios")
+    return render_template("index.html", sensor = countSensor, peso = countPeso)
 @app.route('/peso')
 # @app.route('/index',methods = ['POST','GET'])
 def peso():
@@ -148,10 +149,10 @@ def auth_register(userName):
     if authenticate.get('user') == userName :
         error = "Usuario ya existente"
     return error
-def coutData():
+def coutData(tabla):
     db2 =  mysql.connect()
     mycursor = db2.cursor()
-    querry = "select count(*) from sensorFreeStyle"
+    querry = "select count(*) from "+ tabla
     error = ""
     try:
         mycursor.execute(querry)

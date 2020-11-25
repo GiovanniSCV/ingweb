@@ -141,35 +141,41 @@
   }
   </style>
 </head>
-<body>
-    <div class="login-box">
-        <img src="../static/img/logo.png" class="avatar" alt="Avatar Image">        
-            <h1>Bienvenido</h1>
-            <CENTER>
-                <table>
-                    <tr> 
-                        <th >ID USER</th>                 
-                        <th >PESO</th>
-                        <th >UNIDADES(Kg)</th>
-                    </tr>
-                    {% for valread in read %}   
-                    <tr>
-                        <td>{{ valread[0] }}</td>
-                        <td>{{ valread[1] }}</td>
-                        <td>{{ valread[2] }}</td>
-                    </tr>
-                    {% endfor %}
-                  </table>                  
-                  <br><br><br>
-                  <a href="graficapeso" class="spe" >GRÁFICA PESO</a><br><br><br>
-                  <a href="peso" class="spe" >ACTUALIZAR</a><br><br><br>
-                  <a href="index" class="spe" >VOLVER</a><br><br><br>
-            </CENTER>
-            
-            <br><br>
-      </div>
-    
-        
-    
-</body>
+    <body>
+        <div class="login-box">
+            <img src="../static/img/logo.png" class="avatar" alt="Avatar Image">        
+                <h1>Bienvenido</h1>
+                <CENTER>
+                    <table>
+                        <tr> 
+                            <th >ID USER</th>                 
+                            <th >PESO</th>
+                            <th >UNIDADES(Kg)</th>
+                        </tr>
+                        {% for valread in read %}   
+                        <tr>
+                            <td>{{ valread[0] }}</td>
+                            <td>{{ valread[1] }}</td>
+                            <td>{{ valread[2] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>                  
+                    <br><br><br>
+                    <a href="graficapeso" class="spe" >GRÁFICA PESO</a><br><br><br>
+                    <a href="peso" class="spe" >ACTUALIZAR</a><br><br><br>
+                    <a href="index" class="spe" >VOLVER</a><br><br><br>
+                </CENTER>
+                
+                <br><br>
+        </div>
+        <br><br>
+        <div>
+            <p style="color:rgb(0, 74, 233);">&copy;Los datos mostrados pertenecen unicamente a 
+                el usuario y no pueden ser transferido bajo ninguna circunstancia a otra presona que no este aprobado.
+                <br> Los datos mostrados en esta aplicacion son unicamente para su visualizacion y no pueden ser tomados en cuenta 
+                para procedimientos medicos, mas si le permiten revisar a su medico una vision global de la evolucion de su condiciòn.<br>
+            </p>
+        </div>
+        <br><br>
+    </body>
 </html>
